@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testmodel" nsURI="http://testmodel/1.0" nsPrefix="testmodel">
-  <eClassifiers xsi:type="ecore:EClass" name="IService">
+  <eClassifiers xsi:type="ecore:EClass" name="IService" abstract="true" interface="true">
     <eOperations name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="pause" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="stop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DriveMonitor" eSuperTypes="#//IService">
+  <eClassifiers xsi:type="ecore:EClass" name="DriveMonitor" eSuperTypes="#//IMonitor">
     <eOperations name="getDriveInfo" eType="#//DriveInfo"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="drivelist_previous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="drivelist_current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -15,7 +15,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DriveInfo">
     <eOperations name="getPhysicalDisk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UsbDeviceMonitor" eSuperTypes="#//IService">
+  <eClassifiers xsi:type="ecore:EClass" name="UsbDeviceMonitor" eSuperTypes="#//IMonitor">
     <eOperations name="getUsbDeviceInfo" eType="#//UsbDevice"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_previous" transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
@@ -36,4 +36,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="UsbDevice">
     <eOperations name="getVendor"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IMonitor" abstract="true" interface="true"
+      eSuperTypes="#//IService"/>
 </ecore:EPackage>
