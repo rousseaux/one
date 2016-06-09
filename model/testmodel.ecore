@@ -17,12 +17,21 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UsbDeviceMonitor" eSuperTypes="#//IService">
     <eOperations name="getUsbDeviceInfo" eType="#//UsbDevice"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_previous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
-        transient="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
-        transient="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_changed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
-        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_previous" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//UsbDevice"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_current" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//UsbDevice"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_changed" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//UsbDevice"/>
+      </eGenericType>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UsbDevice">
     <eOperations name="getVendor"/>
