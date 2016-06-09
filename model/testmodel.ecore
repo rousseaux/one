@@ -15,4 +15,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="DriveInfo">
     <eOperations name="getPhysicalDisk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsbDeviceMonitor" eSuperTypes="#//IService">
+    <eOperations name="getUsbDeviceInfo" eType="#//UsbDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_previous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="devicelist_changed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsbDevice">
+    <eOperations name="getVendor"/>
+  </eClassifiers>
 </ecore:EPackage>
